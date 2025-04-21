@@ -5,7 +5,8 @@ interface TotalPrice{
     months: number
 }
 
-const totalPrice  = ({ price, discount, isInstallment, months }: TotalPrice): number => {
+const totalPrice  = (props: TotalPrice): number => {
+    const {price, discount, isInstallment, months} = props;
      let offPrice = price - (price * (discount / 100))
      if(!isInstallment){
          return offPrice
